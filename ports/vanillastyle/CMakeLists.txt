@@ -6,6 +6,12 @@ add_library(${PROJECT_NAME} SHARED)
 include(GNUInstallDirs)
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 #include(Package)
+find_package(nlohmann_json CONFIG REQUIRED)
+set(nlohmann-json_IMPLICIT_CONVERSIONS OFF)
+target_link_libraries(${PROJECT_NAME}
+        PRIVATE
+        nlohmann_json::nlohmann_json
+)
 
 set(SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src)
 set(INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include)
