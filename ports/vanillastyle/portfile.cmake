@@ -3,14 +3,8 @@ vcpkg_from_github(
     REPO AlanusMeminius/VanillaStyle
     REF c3abfc096b216cf7ae4a8e00fbb972a73dd4c079
     SHA512 7ee609cee947fd43b889c394081c750c39e53aaf6a994666bd527035fcbe4127d29b294ab086a7a3ec71d86eff551b5e4a42466e2ff1c8acedfc1a39b19023ed
-)
-file(REMOVE
-    "${SOURCE_PATH}/${PORT}/CMakeLists.txt"
-)
-
-file(COPY
-    "${CMAKE_CURRENT_LIST_DIR}/CMakeLists.txt"
-    DESTINATION "${SOURCE_PATH}/${PORT}"
+    PATCHES
+        dependence.patch
 )
 
 vcpkg_download_distfile(
