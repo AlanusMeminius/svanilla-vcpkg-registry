@@ -54,7 +54,7 @@ vcpkg_cmake_install()
 
 vcpkg_cmake_config_fixup(
     PACKAGE_NAME ${PORT}
-    CONFIG_PATH "lib/cmake/VanillaStyle"
+    CONFIG_PATH cmake
 )
 file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/include")
 file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/share")
